@@ -11,4 +11,5 @@
 - [ ] Pre-computed vector lookup for canonical lifecycle events (Task Acknowledged, Task Completed, Safety Blocked) achieving <0.1ms vector match latency.
 - [ ] Gated similarity selector: filters candidates with `cosine_similarity >= threshold`, picks randomly among qualifying matches with a 2-turn LRU history filter to prevent immediate repetition.
 - [ ] Deterministic fallback mechanism: triggers default clip or TTS synthesis whenever max similarity < threshold.
+- [ ] Voice pipeline integration (Issue #15): routes pre-rendered authentic clips for instant cues (<10ms) while normal generative AI messages use the low-latency generic Piper voice (~70ms).
 - [ ] Verified by: `pytest tests/test_soundboard_router.py` verifying exact phrase match, semantic alias match, random distribution across threshold candidates, and graceful default fallback on low-similarity queries.
