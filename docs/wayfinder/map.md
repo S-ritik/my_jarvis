@@ -28,6 +28,7 @@ A complete architecture specification and resolved decision record for a voice-d
 - [[08: Local Context and Long Term Memory Store](issues/08-local-memory-store.md)]: Standard library `sqlite3` with FTS5 and WAL mode (<0.8ms BM25 search, 0 MB idle RAM, 0 dependencies) storing exact profile paths in relational tables and notes in FTS5 index.
 - [[09: Hearthstone and Warcraft Flavor Dialogue Matrix](issues/09-flavor-soundboard-dialogues.md)]: Pre-rendered instant audio clips (<10ms) for lifecycle cues ("All defense systems online", "As my master wishes", "Job's done!") paired with a loyal majordomo persona for Claude Haiku.
 - [[10: Holographic Sci-Fi Desktop HUD Overlay Engine](issues/10-holographic-desktop-hud.md)]: Lightweight native PyQt6 transparent vector HUD (<45 MB RAM, <0.8% CPU, 60fps) rendering glowing Arc Reactor rings with audio-reactive states (Idle, Listening, Thinking, Speaking).
+- [[11: Semantic Soundboard Audio Router](issues/11-semantic-soundboard-router.md)]: Offline semantic soundboard router matching intents to pre-rendered voice clips using vector similarity with threshold gating, random selection for conversational variety, and deterministic fallback.
 
 ## Not yet specified
 
