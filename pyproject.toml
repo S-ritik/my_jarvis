@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jarvis"
+version = "0.0.0"
+description = "Local-voice Linux desktop assistant (v1 design scaffold: bodies are NotImplementedError)"
+readme = "README.md"
+requires-python = ">=3.13"  # target 3.14; scaffold is kept 3.13-compatible
+dependencies = [
+    "claude-agent-sdk>=0.2.176",  # Claude Code bridge (ADR 01)
+    "openwakeword>=0.6",          # wake word (ADR 03)
+    "faster-whisper>=1.2",        # STT (ADR 04)
+    "onnxruntime",                # Silero VAD + OpenWakeWord, no PyTorch (spec)
+    "piper-tts>=1.8",             # TTS (ADR 07)
+    "sounddevice>=0.5",           # audio IO (ADR 02)
+    "numpy",
+]
+
+[project.optional-dependencies]
+hud = ["PyQt6"]                   # ADR 10; the daemon never imports it
+
+[project.scripts]
+jarvis = "jarvis.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+mypy_path = "src"
+
+[[tool.mypy.overrides]]
+module = ["sounddevice", "openwakeword.*", "faster_whisper.*", "piper.*"]
+ignore_missing_imports = true
