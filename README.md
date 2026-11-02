@@ -29,3 +29,5 @@ A voice-driven desktop AI assistant running on Linux (Intel CPU, no GPU required
 ```
 
 See [docs/wayfinder/map.md](docs/wayfinder/map.md) for the complete decision and architecture specifications.
+
+The v1 design scaffold (typed interfaces with `NotImplementedError` bodies under `src/jarvis/`) and its rationale live in [docs/design/v1/README.md](docs/design/v1/README.md).
